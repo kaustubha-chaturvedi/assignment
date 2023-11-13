@@ -7,6 +7,7 @@ COPY ./app /var/www/app
 WORKDIR /var/www/
 RUN chown root:www-data app && chmod -R 777 app 
 WORKDIR /var/www/app
+RUN echo "DEBUG=False">.env
 RUN mkdir error && virtualenv app && . app/bin/activate && pip install -r requirements.txt && python manage.py collectstatic --noinput && deactivate
 RUN chmod -R 777 /var/www/app/db.sqlite3 && chmod -R 777 /var/www/app/core/ && chmod -R 777 /var/www/app/error
 EXPOSE 80 

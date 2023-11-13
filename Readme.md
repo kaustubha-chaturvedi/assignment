@@ -30,10 +30,36 @@ password: admin
 
 **To run on local machine without docker**
 
-Set `debug=True` in `app/core/settings.py`
-
-and run the following commands in the app directory
+run the following commands in the app directory
 
 `pip install -r requirements.txt`
 
 `python manage.py runserver`
+
+**Screeshot**
+
+These screenshot are in sequence of usage
+
+`Login`
+![Login](./sample/login.png)
+
+`Login Form`
+![Login](./sample/login_form.png)
+
+`Home Pahe`
+![Login](./sample/homepage.png)
+
+`Add Teacher`
+![Login](./sample/add_teacher.png)
+
+`Add Student`
+![Login](./sample/add_student.png)
+
+`Select Pair of Student and Teacher to generate Certificate`
+![Pair of Student and Teacher](./sample/select_pair.png)
+
+`Verify Certificate`
+![Pair of Student and Teacher](./sample/verify_certificate.png)
+
+`Certificate`
+![Pair of Student and Teacher](./sample/certificate.png)
