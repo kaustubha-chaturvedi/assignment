@@ -40,26 +40,26 @@ run the following commands in the app directory
 
 These screenshot are in sequence of usage
 
-`Login`
+***Login***
 ![Login](./sample/login.png)
 
-`Login Form`
+***Login Form***
 ![Login](./sample/login_form.png)
 
-`Home Pahe`
+***Home Page***
 ![Login](./sample/homepage.png)
 
-`Add Teacher`
+***Add Teacher***
 ![Login](./sample/add_teacher.png)
 
-`Add Student`
+***Add Student***
 ![Login](./sample/add_student.png)
 
-`Select Pair of Student and Teacher to generate Certificate`
+***Select Pair of Student and Teacher to generate Certificate***
 ![Pair of Student and Teacher](./sample/select_pair.png)
 
-`Verify Certificate`
+***Verify Certificate***
 ![Pair of Student and Teacher](./sample/verify_certificate.png)
 
-`Certificate`
+***Certificate***
 ![Pair of Student and Teacher](./sample/certificate.png)
