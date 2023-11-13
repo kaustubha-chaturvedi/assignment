@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="container mx-auto mt-[15%]">
+        <form method="post"
+              action="{% url 'verify_certificate' %}"
+              enctype="multipart/form-data"
+              class="max-w-md mx-auto bg-gray-800 p-6 rounded-lg shadow-md">
+            {% csrf_token %}
+            <h2 class="text-2xl font-bold mb-4 text-gray-200">Verify Certificate</h2>
+            <div class="mb-4">
+                <label for="token_file" class="block text-gray-200 text-sm font-bold mb-2">
+                    Choose Certificate Token File
+                </label>
+                <input type="file"
+                       name="token_file"
+                       id="token_file"
+                       accept=".jwt"
+                       class="form-input w-full border bg-gray-900 text-gray-200 rounded-md py-2 px-3"
+                       required>
+            </div>
+            <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Verify Certificate
+            </button>
+        </form>
+    </div>
+{% endblock body %}

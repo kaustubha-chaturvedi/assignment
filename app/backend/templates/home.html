@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="container mx-auto mt-[15%]">
+        <form method="post"
+              action="{% url "generate_certificate" %}"
+              class="max-w-md mx-auto bg-gray-800 p-6 rounded-lg shadow-md">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="student" class="block text-gray-200 text-sm font-bold mb-2">Select Student</label>
+                <select name="student"
+                        id="student"
+                        class="form-input w-full border bg-gray-900 text-gray-200 rounded-md py-2 px-3"
+                        required
+                        hx-get="{% url "get_teachers" %}"
+                        hx-trigger="change"
+                        hx-target="#teacher">
+                    <option value="" selected disabled>Select a Student</option>
+                    {% for student in students %}<option value="{{ student.id }}">{{ student.name }}</option>{% endfor %}
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="teacher" class="block text-gray-200 text-sm font-bold mb-2">Select Teacher</label>
+                <select name="teacher"
+                        id="teacher"
+                        class="form-input w-full border bg-gray-900 text-gray-200 rounded-md py-2 px-3"
+                        required
+                        hx-get="{% url "get_students" %}"
+                        hx-trigger="change"
+                        hx-target="#student">
+                    <option value="" selected disabled>Select a Teacher</option>
+                    {% for teacher in teachers %}<option value="{{ teacher.id }}">{{ teacher.name }}</option>{% endfor %}
+                </select>
+            </div>
+            <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Generate Certificate
+            </button>
+        </form>
+    </div>
+{% endblock body %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="container mx-auto mt-[15%]">
+        <form method="post"
+              class="max-w-md mx-auto bg-gray-800 p-6 rounded-lg shadow-md">
+            {% csrf_token %}
+            {% for el in form %}
+                <div class="mb-4 text-gray-200">
+                    <label for="{{ el.auto_id }}"
+                           class="block text-gray-200 text-sm font-bold mb-2">
+                        {{ el.label }}
+                        {% if el.field.required %}<span class="text-red-500 text-xs">*</span>{% endif %}
+                    </label>
+                    {% if el.field.widget.input_type != 'checkbox' %}
+                        <input type="{{ el.field.widget.input_type }}"
+                               name="{{ el.name }}"
+                               id="{{ el.auto_id }}"
+                               placeholder=""
+                               class="form-input w-full border bg-gray-900 text-gray-200 rounded-md py-2 px-3"
+                               {% if el.field.required %}required{% endif %}>
+                    {% else %}
+                        {{ el }}
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add</button>
+        </form>
+    </div>
+{% endblock body %}

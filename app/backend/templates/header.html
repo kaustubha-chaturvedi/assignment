@@ -1,0 +1,15 @@
+<div class="mx-auto flex justify-between items-center py-4 px-8 w-full">
+    <a href="{% url "home" %}" hx-boost="true" hx-indicator="#loading" class="text-2xl font-bold text-gray-200">Certificate Generation API</a>
+    <div class="flex gap-4">
+        {% if request.user.is_authenticated %}
+            <a hx-boost="true" hx-indicator="#loading" href="{% url 'verify_certificate' %}"
+               class="text-blue-400 hover:text-blue-300">Verify Certificate</a>
+            <a hx-boost="true" hx-indicator="#loading" href="{% url 'add_teacher' %}"
+               class="text-blue-400 hover:text-blue-300">Add Teacher</a>
+            <a hx-boost="true" hx-indicator="#loading" href="{% url 'add_student' %}"
+               class="text-blue-400 hover:text-blue-300">Add Student</a>
+        {% else %}
+            <a hx-boost="true" href="{% url "login" %}" class="text-blue-400 hover:text-blue-300">Login</a>
+        {% endif %}
+    </div>
+</div>

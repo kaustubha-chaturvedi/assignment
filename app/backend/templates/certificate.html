@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="max-w-2xl mx-auto p-8 bg-gray-800 text-gray-200 rounded shadow-md mt-10">
+        <h1 class="text-2xl font-bold text-center mb-4">Certificate of Achievement</h1>
+        <div class="text-left">
+            <p class="mb-2">
+                <strong>Teacher:</strong> {{ teacher }}
+            </p>
+            <p class="mb-2">
+                <strong>Student:</strong> {{ student }}
+            </p>
+            <p>
+                <strong>Issue Date:</strong> {{ issue_date }}
+            </p>
+            <p>
+                <strong>Expiry Date:</strong> {{ expiry_date }}
+            </p>
+        </div>
+    </div>
+{% endblock body %}
