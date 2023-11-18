@@ -1,4 +1,4 @@
-## Assignment for prishni
+## Assignment
 
 **Problem Statement**
 ```
